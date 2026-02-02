@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Harsh Gandhi | Contact</title>
+
+<title> Harsh Gandhi </title>
 <link rel="stylesheet" href="style.css">
 <style>
 body {
@@ -102,42 +100,20 @@ footer {
   <div class="logo">HG</div>
 </header>
 
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form id="contactForm" class="contact-form" novalidate>
-    <label for="name">Full Name</label>
-    <input type="text" id="name" placeholder="Enter your name">
-    <small class="error" id="nameError"></small>
-
-    <label for="email">Email Address</label>
-    <input type="email" id="email" placeholder="Enter your email">
-    <small class="error" id="emailError"></small>
-
-    <label for="message">Message</label>
-    <textarea id="message" rows="5" placeholder="Write your message"></textarea>
-    <small class="error" id="messageError"></small>
-
-    <button type="submit">Send Message</button>
-  </form>
+  <section id="about">
+  <h2>About Me</h2>
+  <ul>
+    <li> Hi! I'm Harsh, a web developer who loves creating clean, simple, and user-friendly websites.</li>
+    <li> Coding isn't just my job—it's my passion. I started learning HTML and CSS just out of curiosity, and now I enjoy building full web apps with JavaScript.</li>
+    <li> I'm always learning. New frameworks, libraries, or design trends—I love exploring them and applying them to my projects.</li>
+    <li> Creativity inspires me. From designing website layouts to tweaking colors and animations, I enjoy making digital experiences enjoyable for users.</li>
+    <li> Outside of coding, I love reading tech blogs, exploring photography, and discovering new music.</li>
+    <li> Collaboration is key. I enjoy working with others, sharing ideas, and learning from teammates to create something better together.</li>
+    <li> I believe in building projects that make life easier, fun, or more engaging for people.</li>
+    <li> My goal is to grow as a developer while creating things that people love to use and remember.</li>
+    <li> Fun fact: I often experiment with small side projects, like mini games or interactive web tools, just for fun and learning!</li>
+  </ul>
 </section>
-
-<script>
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-  let valid = true;
-  const name = document.getElementById("name");
-  const email = document.getElementById("email");
-  const message = document.getElementById("message");
-  document.getElementById("nameError").innerText = "";
-  document.getElementById("emailError").innerText = "";
-  document.getElementById("messageError").innerText = "";
-  if(name.value.trim()===""){ document.getElementById("nameError").innerText="Name is required"; valid=false; }
-  if(email.value.trim()===""){ document.getElementById("emailError").innerText="Email is required"; valid=false; }
-  else if(!/^\S+@\S+\.\S+$/.test(email.value)){ document.getElementById("emailError").innerText="Enter a valid email"; valid=false; }
-  if(message.value.trim()===""){ document.getElementById("messageError").innerText="Message is required"; valid=false; }
-  if(valid){ alert("Message sent successfully"); document.getElementById("contactForm").reset(); }
-});
-</script>
 
 <footer>
   <p>&copy; Harsh@2026. All Rights Reserved.</p>

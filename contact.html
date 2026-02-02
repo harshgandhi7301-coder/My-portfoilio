@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harsh Gandhi | Contact</title>
+ <title>Harsh Gandhi | Contact</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+
+    .submitted-info {
+      margin-top: 30px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+    .user-entry {
+      background: #f4f4f4;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
 <header>
@@ -37,6 +48,9 @@
 
     <button type="submit">Send Message</button>
   </form>
+  <div class="submitted-info" id="submittedInfo">
+    <h3>Submitted Contacts:</h3>
+  </div>
 </section>
 
 <script>
@@ -68,7 +82,21 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
   }
 
   if(valid){
-    alert("Message sent successfully!");
+    // Add submitted info to the page
+    const submittedInfo = document.getElementById("submittedInfo");
+    const userEntry = document.createElement("div");
+    userEntry.classList.add("user-entry");
+    userEntry.innerHTML = `
+      <p><strong>Name:</strong> ${name.value}</p>
+      <p><strong>Email:</strong> ${email.value}</p>
+      <p><strong>Message:</strong> ${message.value}</p>
+    `;
+    submittedInfo.appendChild(userEntry);
+
+    // Show popup alert
+    alert("Your message has been sent successfully!");
+
+    // Reset form
     document.getElementById("contactForm").reset();
   }
 });
